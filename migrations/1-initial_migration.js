@@ -61,7 +61,7 @@ var migrationCommands = [{
                     "type": Sequelize.INTEGER,
                     "field": "userId",
                     "primaryKey": true,
-                    "allowNull": false
+                    "allowNull": false,
                 },
                 "FirstName": {
                     "type": Sequelize.STRING(50),
