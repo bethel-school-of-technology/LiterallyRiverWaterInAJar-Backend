@@ -12,8 +12,8 @@ var Sequelize = require('sequelize');
 
 var info = {
     "revision": 1,
-    "name": "initial_migration",
-    "created": "2020-07-01T21:04:45.024Z",
+    "name": "initial-migration",
+    "created": "2020-07-03T01:17:39.408Z",
     "comment": ""
 };
 
@@ -57,26 +57,44 @@ var migrationCommands = [{
         params: [
             "users",
             {
-                "userId": {
+                "UserId": {
                     "type": Sequelize.INTEGER,
-                    "field": "userId",
-                    "primaryKey": true,
+                    "field": "UserId",
                     "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true
                 },
                 "FirstName": {
-                    "type": Sequelize.STRING(50),
-                    "field": "FirstName",
-                    "allowNull": true
+                    "type": Sequelize.STRING,
+                    "field": "FirstName"
                 },
-                "LAstNAme": {
-                    "type": Sequelize.STRING(50),
-                    "field": "LAstNAme",
-                    "allowNull": true
+                "LastName": {
+                    "type": Sequelize.STRING,
+                    "field": "LastName"
                 },
-                "SignUpDate": {
-                    "type": Sequelize.DATE,
-                    "field": "SignUpDate",
-                    "allowNull": true
+                "Username": {
+                    "type": Sequelize.STRING,
+                    "field": "Username",
+                    "unique": true
+                },
+                "Password": {
+                    "type": Sequelize.STRING,
+                    "field": "Password"
+                },
+                "Email": {
+                    "type": Sequelize.STRING,
+                    "field": "Email",
+                    "unique": true
+                },
+                "Admin": {
+                    "type": Sequelize.BOOLEAN,
+                    "field": "Admin",
+                    "defaultValue": false
+                },
+                "Deleted": {
+                    "type": Sequelize.BOOLEAN,
+                    "field": "Deleted",
+                    "defaultValue": false
                 },
                 "createdAt": {
                     "type": Sequelize.DATE,
