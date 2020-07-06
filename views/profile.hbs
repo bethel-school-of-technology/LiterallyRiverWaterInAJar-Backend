@@ -1,9 +1,13 @@
 <div class="profile">
     
-    <h2 class="welcome">Hello {{userData.FirstName}} {{userData.LastName}} </h2>
+    <h2 class="welcome"> Hello {{userData.FirstName}} {{userData.LastName}} </h2>
+    
     <h3>Username: {{userData.Username}} </h3>
+    
     <h3>UserId: {{userData.UserId}} </h3>
-    <div class="inputBackground">
+    
+    
+    {{!-- <div class="inputBackground">
         <h2>Your Post List:</h2>
         <ul>
             {{#each userData.posts}}
@@ -16,9 +20,10 @@
 
         </ul>
         <h4>Click on a Post to Edit or Delete</h4>
-    </div>
+    </div> --}}
     <br>
-    <a class="a" href="/posts/createPost">Create A Post</a>
+    
+    {{!-- <a class="a" href="/posts/createPost">Create A Post</a> --}}
     <a class="a" href="/users/logout">Logout</a>
-    <a class="a" href="/users/admin">I am Admin</a>
+    {{!-- <a class="a" href="/users/admin">I am Admin</a> --}}
 </div>
