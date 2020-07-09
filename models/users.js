@@ -22,9 +22,14 @@ module.exports = (sequelize, DataTypes) => {
      type: DataTypes.STRING
     },
     Admin: {
-      default: false,
+      defaultValue: false,
       type: DataTypes.BOOLEAN
     }, 
+    Deleted: {
+      defaultValue: false,
+      type: DataTypes.BOOLEAN
+    },
+    
   }, );
 
   return users;

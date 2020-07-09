@@ -65,8 +65,17 @@
                     "seqType": "Sequelize.STRING"
                 },
                 "Admin": {
-                    "default": false,
+                    "defaultValue": {
+                        "value": false
+                    },
                     "field": "Admin",
+                    "seqType": "Sequelize.BOOLEAN"
+                },
+                "Deleted": {
+                    "defaultValue": {
+                        "value": false
+                    },
+                    "field": "Deleted",
                     "seqType": "Sequelize.BOOLEAN"
                 },
                 "createdAt": {
@@ -83,5 +92,5 @@
             "indexes": []
         }
     },
-    "revision": 2
+    "revision": 1
 }
