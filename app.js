@@ -16,6 +16,24 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+
+/*
+npm i cors -> Run this in the terminal
+
+
+const cors = require('cors'); -> This goes unser the express var at the top
+
+app.use(cors()) -> under var app = express()
+
+*/
+
+
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
