@@ -1,32 +1,29 @@
 var createError = require('http-errors');
 var express = require('express');
+var cors = require('cors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var logger = require('morgan');
 var models = require('./models');
 var passport = require('passport');  
 var session = require('express-session'); 
 
+// app.use(bodyParser.json());
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var inventoryRouter = require('./routes/inventory');
+var testimonialsRouter = require('./routes/testimonials');
+// var usersRouter = require('./routes/users');
 
 var app = express();
 
+app.use(cors());
+
+// not using views
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
-
-
-/*
-npm i cors -> Run this in the terminal
-
-
-const cors = require('cors'); -> This goes unser the express var at the top
-
-app.use(cors()) -> under var app = express()
-
-*/
-
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'hbs');
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -45,7 +42,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/inventory', inventoryRouter);
+app.use('/testimonials', testimonialsRouter);
+// app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
