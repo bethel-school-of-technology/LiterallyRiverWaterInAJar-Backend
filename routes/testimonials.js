@@ -5,13 +5,13 @@ var models = require("../models");
 // render createTestimonial.js react screen
 router.get("/about", function (req, res, next) {
   models.posts.findAll().then((posts) => {
-    res.json(posts);
+    res.json({posts});
   });
 });
 
 // create new testimonial
 router.post("/about", function (req, res, next) {
-  models.posts.create(req.body).then(() => {
+  models.posts.findOrCreate(req.body).then(() => {
     res.json({});
   });
 });

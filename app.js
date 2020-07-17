@@ -9,8 +9,6 @@ var models = require('./models');
 var passport = require('passport');  
 var session = require('express-session'); 
 
-// app.use(bodyParser.json());
-
 var indexRouter = require('./routes/index');
 var inventoryRouter = require('./routes/inventory');
 var testimonialsRouter = require('./routes/testimonials');
@@ -18,12 +16,9 @@ var testimonialsRouter = require('./routes/testimonials');
 
 var app = express();
 
-app.use(cors());
 
-// not using views
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'hbs');
+app.use(bodyParser.json());
+app.use(cors());
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');

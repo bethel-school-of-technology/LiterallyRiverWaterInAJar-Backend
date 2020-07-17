@@ -6,14 +6,15 @@ var Sequelize = require('sequelize');
  * Actions summary:
  *
  * createTable "inventory", deps: []
+ * createTable "posts", deps: []
  * createTable "users", deps: []
  *
  **/
 
 var info = {
     "revision": 1,
-    "name": "initial-migration",
-    "created": "2020-07-03T01:17:39.408Z",
+    "name": "posts",
+    "created": "2020-07-16T23:41:46.620Z",
     "comment": ""
 };
 
@@ -37,6 +38,40 @@ var migrationCommands = [{
                     "type": Sequelize.STRING(45),
                     "field": "location",
                     "allowNull": false
+                },
+                "createdAt": {
+                    "type": Sequelize.DATE,
+                    "field": "createdAt",
+                    "allowNull": false
+                },
+                "updatedAt": {
+                    "type": Sequelize.DATE,
+                    "field": "updatedAt",
+                    "allowNull": false
+                }
+            },
+            {}
+        ]
+    },
+    {
+        fn: "createTable",
+        params: [
+            "posts",
+            {
+                "PostId": {
+                    "type": Sequelize.INTEGER,
+                    "field": "PostId",
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "allowNull": false
+                },
+                "PostTitle": {
+                    "type": Sequelize.STRING,
+                    "field": "PostTitle"
+                },
+                "PostBody": {
+                    "type": Sequelize.STRING,
+                    "field": "PostBody"
                 },
                 "createdAt": {
                     "type": Sequelize.DATE,
