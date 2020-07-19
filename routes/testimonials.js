@@ -11,9 +11,22 @@ router.get("/about", function (req, res, next) {
 
 // create new testimonial
 router.post("/about", function (req, res, next) {
-  models.posts.findOrCreate(req.body).then(() => {
-    res.json({});
-  });
+  models.posts
+    .findOrCreate({
+      where: {
+        UserId: user.UserId,
+        PostDate: req.body.postDate,
+        PostTitle: req.body.postTitle,
+        PostBody: req.body.postBody
+      }
+    })
+    .spread(function (result, created) {
+      if (created) {
+        res.redirect('/testimonials/about');
+      } else {
+        res.send('You did it wrong. Get it together.');
+      }
+    })
 });
 
 // render editTestimonial.
