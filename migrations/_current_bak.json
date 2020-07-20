@@ -3,10 +3,10 @@
         "inventory": {
             "tableName": "inventory",
             "schema": {
-                "id": {
+                "name": {
                     "allowNull": false,
                     "primaryKey": true,
-                    "field": "id",
+                    "field": "name",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "price": {
@@ -123,5 +123,5 @@
             "indexes": []
         }
     },
-    "revision": 2
+    "revision": 1
 }
