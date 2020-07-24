@@ -22,7 +22,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     PostTitle: {
       type: DataTypes.STRING},
-    PostBody: DataTypes.STRING
+    PostBody: {
+      type: DataTypes.STRING
+    }
   }, {
     sequelize,
     modelName: 'posts',

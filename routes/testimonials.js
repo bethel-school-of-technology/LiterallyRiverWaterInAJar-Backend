@@ -14,9 +14,7 @@ router.post("/about", function (req, res, next) {
   models.posts
     .findOrCreate({
       where: {
-        UserId: user.UserId,
-        PostDate: req.body.postDate,
-        PostTitle: req.body.postTitle,
+        PostId: req.body.postId,
         PostBody: req.body.postBody
       }
     })

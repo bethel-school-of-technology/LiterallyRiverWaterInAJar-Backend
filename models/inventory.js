@@ -2,7 +2,7 @@
 
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('inventory', {
-    id: {
+    name: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    location: {
+    description: {
       type: DataTypes.STRING(45),
       allowNull: false
     }

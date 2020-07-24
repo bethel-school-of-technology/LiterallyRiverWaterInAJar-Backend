@@ -3,7 +3,7 @@
         "inventory": {
             "tableName": "inventory",
             "schema": {
-                "id": {
+                "name": {
                     "allowNull": false,
                     "primaryKey": true,
                     "field": "id",
@@ -14,7 +14,7 @@
                     "field": "price",
                     "seqType": "Sequelize.INTEGER"
                 },
-                "location": {
+                "description": {
                     "allowNull": false,
                     "field": "location",
                     "seqType": "Sequelize.STRING(45)"
