@@ -20,8 +20,6 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true
     },
-    PostTitle: {
-      type: DataTypes.STRING},
     PostBody: {
       type: DataTypes.STRING
     }

@@ -3,11 +3,17 @@
         "inventory": {
             "tableName": "inventory",
             "schema": {
-                "name": {
+                "id": {
                     "allowNull": false,
                     "primaryKey": true,
+                    "autoIncrement": true,
                     "field": "id",
                     "seqType": "Sequelize.INTEGER"
+                },
+                "name": {
+                    "allowNull": false,
+                    "field": "name",
+                    "seqType": "Sequelize.STRING(45)"
                 },
                 "price": {
                     "allowNull": false,
@@ -16,8 +22,28 @@
                 },
                 "description": {
                     "allowNull": false,
-                    "field": "location",
+                    "field": "description",
                     "seqType": "Sequelize.STRING(45)"
+                },
+                "size": {
+                    "allowNull": false,
+                    "field": "size",
+                    "seqType": "Sequelize.STRING(10)"
+                },
+                "numbers": {
+                    "allowNull": false,
+                    "field": "numbers",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "inCart": {
+                    "allowNull": false,
+                    "field": "inCart",
+                    "seqType": "Sequelize.BOOLEAN"
+                },
+                "isMainProduct": {
+                    "allowNull": false,
+                    "field": "isMainProduct",
+                    "seqType": "Sequelize.BOOLEAN"
                 },
                 "createdAt": {
                     "allowNull": false,
@@ -41,10 +67,6 @@
                     "primaryKey": true,
                     "field": "PostId",
                     "seqType": "Sequelize.INTEGER"
-                },
-                "PostTitle": {
-                    "field": "PostTitle",
-                    "seqType": "Sequelize.STRING"
                 },
                 "PostBody": {
                     "field": "PostBody",
@@ -123,5 +145,5 @@
             "indexes": []
         }
     },
-    "revision": 2
+    "revision": 3
 }

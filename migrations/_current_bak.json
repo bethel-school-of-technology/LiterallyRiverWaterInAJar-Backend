@@ -6,7 +6,7 @@
                 "name": {
                     "allowNull": false,
                     "primaryKey": true,
-                    "field": "name",
+                    "field": "id",
                     "seqType": "Sequelize.INTEGER"
                 },
                 "price": {
@@ -14,7 +14,7 @@
                     "field": "price",
                     "seqType": "Sequelize.INTEGER"
                 },
-                "location": {
+                "description": {
                     "allowNull": false,
                     "field": "location",
                     "seqType": "Sequelize.STRING(45)"
@@ -123,5 +123,5 @@
             "indexes": []
         }
     },
-    "revision": 1
+    "revision": 2
 }
