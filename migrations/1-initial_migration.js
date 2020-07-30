@@ -13,8 +13,8 @@ var Sequelize = require('sequelize');
 
 var info = {
     "revision": 1,
-    "name": "posts",
-    "created": "2020-07-16T23:41:46.620Z",
+    "name": "initial_migration",
+    "created": "2020-07-28T00:13:43.197Z",
     "comment": ""
 };
 
@@ -23,10 +23,16 @@ var migrationCommands = [{
         params: [
             "inventory",
             {
-                "name": {
+                "id": {
                     "type": Sequelize.INTEGER,
-                    "field": "name",
+                    "field": "id",
+                    "autoIncrement": true,
                     "primaryKey": true,
+                    "allowNull": false
+                },
+                "name": {
+                    "type": Sequelize.STRING(45),
+                    "field": "name",
                     "allowNull": false
                 },
                 "price": {
@@ -34,9 +40,29 @@ var migrationCommands = [{
                     "field": "price",
                     "allowNull": false
                 },
-                "location": {
+                "description": {
                     "type": Sequelize.STRING(45),
-                    "field": "location",
+                    "field": "description",
+                    "allowNull": false
+                },
+                "size": {
+                    "type": Sequelize.STRING(10),
+                    "field": "size",
+                    "allowNull": false
+                },
+                "numbers": {
+                    "type": Sequelize.INTEGER,
+                    "field": "numbers",
+                    "allowNull": false
+                },
+                "inCart": {
+                    "type": Sequelize.BOOLEAN,
+                    "field": "inCart",
+                    "allowNull": false
+                },
+                "isMainProduct": {
+                    "type": Sequelize.BOOLEAN,
+                    "field": "isMainProduct",
                     "allowNull": false
                 },
                 "createdAt": {
@@ -64,10 +90,6 @@ var migrationCommands = [{
                     "primaryKey": true,
                     "autoIncrement": true,
                     "allowNull": false
-                },
-                "PostTitle": {
-                    "type": Sequelize.STRING,
-                    "field": "PostTitle"
                 },
                 "PostBody": {
                     "type": Sequelize.STRING,

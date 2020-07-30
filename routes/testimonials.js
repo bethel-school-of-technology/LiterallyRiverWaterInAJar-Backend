@@ -11,18 +11,19 @@ router.get("/about", function (req, res, next) {
 
 // create new testimonial
 router.post("/about", function (req, res, next) {
+  console.log(req.body);
+  console.log("post being created");
   models.posts
     .findOrCreate({
       where: {
-        PostId: req.body.postId,
-        PostBody: req.body.postBody
+        PostBody: req.body.newPost.postBody
       }
     })
     .spread(function (result, created) {
       if (created) {
-        res.redirect('/testimonials/about');
+        res.json({ message: 'you did it!'});
       } else {
-        res.send('You did it wrong. Get it together.');
+        res.json({ message:'You did it wrong. Get it together.'});
       }
     })
 });
