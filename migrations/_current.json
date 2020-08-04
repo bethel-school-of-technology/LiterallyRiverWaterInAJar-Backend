@@ -15,19 +15,34 @@
                     "field": "name",
                     "seqType": "Sequelize.STRING(45)"
                 },
-                "price": {
+                "price1": {
                     "allowNull": false,
-                    "field": "price",
+                    "field": "price1",
                     "seqType": "Sequelize.INTEGER"
                 },
-                "description": {
+                "price2": {
                     "allowNull": false,
-                    "field": "description",
-                    "seqType": "Sequelize.STRING(45)"
+                    "field": "price2",
+                    "seqType": "Sequelize.INTEGER"
                 },
-                "size": {
+                "description1": {
                     "allowNull": false,
-                    "field": "size",
+                    "field": "description1",
+                    "seqType": "Sequelize.STRING"
+                },
+                "description2": {
+                    "allowNull": false,
+                    "field": "description2",
+                    "seqType": "Sequelize.STRING"
+                },
+                "size1": {
+                    "allowNull": false,
+                    "field": "size1",
+                    "seqType": "Sequelize.STRING(10)"
+                },
+                "size2": {
+                    "allowNull": false,
+                    "field": "size2",
                     "seqType": "Sequelize.STRING(10)"
                 },
                 "numbers": {
@@ -54,6 +69,11 @@
                     "allowNull": false,
                     "field": "updatedAt",
                     "seqType": "Sequelize.DATE"
+                },
+                "image": {
+                    "allowNull": false,
+                    "field": "image",
+                    "seqType": "Sequelize.STRING"
                 }
             },
             "indexes": []

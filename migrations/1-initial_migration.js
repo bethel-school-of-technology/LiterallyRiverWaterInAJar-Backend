@@ -14,7 +14,7 @@ var Sequelize = require('sequelize');
 var info = {
     "revision": 1,
     "name": "initial_migration",
-    "created": "2020-07-28T00:13:43.197Z",
+    "created": "2020-08-03T20:36:16.674Z",
     "comment": ""
 };
 
@@ -35,19 +35,34 @@ var migrationCommands = [{
                     "field": "name",
                     "allowNull": false
                 },
-                "price": {
+                "price1": {
                     "type": Sequelize.INTEGER,
-                    "field": "price",
+                    "field": "price1",
                     "allowNull": false
                 },
-                "description": {
-                    "type": Sequelize.STRING(45),
-                    "field": "description",
+                "price2": {
+                    "type": Sequelize.INTEGER,
+                    "field": "price2",
                     "allowNull": false
                 },
-                "size": {
+                "description1": {
+                    "type": Sequelize.STRING,
+                    "field": "description1",
+                    "allowNull": false
+                },
+                "description2": {
+                    "type": Sequelize.STRING,
+                    "field": "description2",
+                    "allowNull": false
+                },
+                "size1": {
                     "type": Sequelize.STRING(10),
-                    "field": "size",
+                    "field": "size1",
+                    "allowNull": false
+                },
+                "size2": {
+                    "type": Sequelize.STRING(10),
+                    "field": "size2",
                     "allowNull": false
                 },
                 "numbers": {
@@ -73,6 +88,11 @@ var migrationCommands = [{
                 "updatedAt": {
                     "type": Sequelize.DATE,
                     "field": "updatedAt",
+                    "allowNull": false
+                },
+                "image": {
+                    "type": Sequelize.STRING,
+                    "field": "image",
                     "allowNull": false
                 }
             },

@@ -13,18 +13,30 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(45),
       allowNull: false
     },
-    price: {
+    price1: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    description: {
-      type: DataTypes.STRING(45),
+     price2: {
+       type: DataTypes.INTEGER,
+       allowNull: false
+     },
+    description1: {
+      type: DataTypes.STRING,
       allowNull: false
     },
-    size: {
+     description2: {
+       type: DataTypes.STRING,
+       allowNull: false
+     },
+    size1: {
       type: DataTypes.STRING(10),
       allowNull: false
     },
+     size2: {
+       type: DataTypes.STRING(10),
+       allowNull: false
+     },
     numbers: {
       type: DataTypes.INTEGER,
       allowNull: false
@@ -44,7 +56,11 @@ module.exports = function(sequelize, DataTypes) {
     updatedAt: {
       type: DataTypes.DATE,
       allowNull: false
-    }
+    },
+     image: {
+       type: DataTypes.STRING,
+       allowNull: false
+     },
 
 
   }, {
